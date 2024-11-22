@@ -3,6 +3,8 @@ import routes from "./src/routes/post_route.js";
 
 const app = express();
 
+app.use(express.static("uploads"))
+
 routes(app);
 
 app.listen(3000, () => {

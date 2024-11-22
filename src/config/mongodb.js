@@ -11,8 +11,10 @@ export default async function mongodb_connect() {
         .replace('<db_password>', password);
 
     try {
+        console.log("Trying to connect to MongoDB...");
         mongoClient = new MongoClient(connection);
         await mongoClient.connect();
+        console.log("Connected to MongoDB");
     } catch (erro) {
         console.error('MongoDB Connection Error', erro);
         process.exit();
